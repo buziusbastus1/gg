@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" />
+    <title>Grafika</title>
+</head>
+<header class="header">
+  <div class="overlay"></div>
+    <h1>Grafika we dwoje</h1>
+</header>
+<body>
+  
+    <div class="zdj">  
+        
+        
+        
+        <div id="navMain">
+            <ul>
+                <li><a class="a1" href="#nogo"> <img src="/zdjecia/j1.jpg" class="zdj1" alt="" srcset=""></a>
+                    <ul id="menu">
+                        <li ><a id="desc1" onClick="setTimeout(scrollToBottom, delay)"  href="#nogo">Biografia</a></li>
+                        <li><a id="myBtn1" href="#12">Galeria prac</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="navMain2">
+            <ul>
+                <li><a class="a2" href="#nogo">  <img src="/zdjecia/r.jpg"  class="zdj2" alt="" srcset="" > </a>
+                    <ul id="menu">
+                        <li ><a id="desc2" onClick="setTimeout(scrollToBottom, delay)"   value="a" href="#nogo">Biografia</a></li>
+                        <li ><a id="myBtn" href="#123">Galeria prac</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+      </div>
+     
+      
+
+      <section id="myModal" class="modal">
+
+        <!-- content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Ryszard Otręba</h2>
+          </div>
+
+          <div class="btn-container"></div>
+            <div class="section-center">
+              <!-- single -->
+              
+                
+                
+            </div>
+        </div>
+      
+      </section>
+
+      <section id="myModal1" class="modal">
+
+        <!-- content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close1">&times;</span>
+            <h2>Jadwiga Kaim-Otręba</h2>
+          </div>
+
+          <div class="btn-container1"></div>
+            <div class="section-center1">
+              <!-- single -->
+              
+            </div>
+        </div>
+            
+      
+      </section>
+
+      <div id="one"></div>
+
+       <script type="module">
+
+      import PhotoSwipeLightbox from '/photoswipe-lightbox.esm.js';
+      import PhotoSwipeDynamicCaption from './photoswipe-dynamic-caption-plugin.esm.js';
+
+      const smallScreenPadding = {
+        top: 0, bottom: 0, left: 0, right: 0
+      };
+      const largeScreenPadding = {
+        top: 30, bottom: 30, left: 0, right: 0
+      };
+
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: '.section-center,.section-center1',
+        children: 'a',
+
+        paddingFn: (viewportSize) => {
+          return viewportSize.x < 700 ? smallScreenPadding : largeScreenPadding
+        },
+        pswpModule: () => import('/photoswipe.esm.js')
+      });
+      const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+        mobileLayoutBreakpoint: 700,
+        type: 'auto',
+        mobileCaptionOverlapRatio: 1
+      });
+
+      lightbox.init();
+
+      </script>
+
+      <script>
+
+      let first=document.querySelector("#desc1");
+      let second=document.querySelector("#desc2");
+
+      let goodmorning=(message, bgcolor)=>
+		{
+      let msg=document.querySelector("#one");
+      msg.innerText=message;
+      msg.style.backgroundColor=bgcolor;
+    }
+    
+    
+      first.addEventListener('click', function(){
+      
+      goodmorning('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don"t look even slightly believable" If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.','hsla(208, 24%, 68%, 0.215');
+    });
+    
+      second.addEventListener('click', function(){
+      goodmorning('Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.3','hsla(192, 45%, 78%, 0.315');
+    });
+
+function scrollToBottom () {
+  const element = document.getElementById('one')
+  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+      var delay = 10;
+      setTimeout( myfunction, delay );
+
+      
+
+        </script>
+     
+    
+
+
+
+    
+
+
+
+
+<footer class="footer">
+    <div class="footer__links col2">
+        <a href="#"> Careers</a>
+        <a href="#"> Support</a>
+        <a href="#"> Privacy Policy</a>
+      </div>
+</footer>
+<script src="/script.js"></script>
+<script src="/script1.js"></script>
+</body>
+</html>
