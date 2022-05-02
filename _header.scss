@@ -4,13 +4,32 @@ body{
   background-color: #c9d0e060;
 
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 .header{
-    position: relative;
-  z-index: 1;  
-   text-align: center;
+position: relative;
+z-index: 1;  
+text-align: center;
 background: white ;
-   margin: 0;
+margin: 0;
 padding: 0;
 width: 100%;
 font-family: 'Public Sans', sans-serif;
@@ -18,5 +37,10 @@ font-weight: 300;
 overflow-x: hidden;
 margin: 0;
 padding: 0;
-font-size: 2vw;
+font-size: 2.2vw;
+}
+@include breakpoint-down(small) {
+  .header{
+    font-size: 4.2vw;
+  }
 }
